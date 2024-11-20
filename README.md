@@ -45,3 +45,11 @@ Passando o código gerado como parâmetro e você será redirecionado para a URL
 ## Aprendizados
 
 Nesse projeto aprendi a utilizar funções lambda na plataforma AWS, além de como armazenar arquivos utilizando o S3 Bucket e criar portas de entrada para funcionalidades com API Gateway. Também aprend a como configurar o permissionamento de serviços com o IAM (Identity Access Management).
+
+## Extra
+
+Como desafio extra, adicionei testes unitários para garantia das funcionalidades utilizando JUnit e Mockito.
+
+![image](https://github.com/user-attachments/assets/736f4ebd-cf29-4804-87f3-6ec4c624f031)
+
+
