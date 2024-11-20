@@ -4,6 +4,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
@@ -11,11 +12,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class Main implements RequestHandler<Map<String, Object>, Map<String, String>> {
+public class ShortUrlHandler implements RequestHandler<Map<String, Object>, Map<String, String>> {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    private final S3Client s3Client = S3Client.builder().build();
+    private final S3Client s3Client;
+
+    public ShortUrlHandler(S3Client s3Client) {
+        this.s3Client = s3Client;
+    }
+
+    public ShortUrlHandler() {
+        this.s3Client = S3Client.builder()
+                .region(Region.US_EAST_2)
+                .build();
+    }
 
     @Override
     public Map<String, String> handleRequest(Map<String, Object> input, Context context) {
