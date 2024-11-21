@@ -15,8 +15,9 @@ Aplicação Java para encurtamento de URLs.
 ## Uso/Exemplos
 Para encurtar a URL, faça uma chamada POST para o endpoint:
 
-`https://qxhpadj6ad.execute-api.us-east-2.amazonaws.com/prod/create`
-
+```
+    {url-removed}/create // Serviço desligado para evitar billing
+```
 Com o seguinte body JSON:
 
 ```json
@@ -36,7 +37,9 @@ O resultado dessa chamada retornará um código único:
 
 Agora basta chamar o endpoint:
 
-`https://qxhpadj6ad.execute-api.us-east-2.amazonaws.com/prod/{code}`
+```
+    {url-removed}/{code} // Serviço desligado para evitar billing
+```
 
 Passando o código gerado como parâmetro e você será redirecionado para a URL original.
 
